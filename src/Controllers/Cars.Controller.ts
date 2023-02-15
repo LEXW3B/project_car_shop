@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+// import { model } from 'mongoose';
 import CarsService from '../Services/Cars.Service';
 
 export default class CarsController {
@@ -38,6 +39,28 @@ export default class CarsController {
       const { id } = this.req.params;
       const cars = await this.carsService.findById(id);
       return this.res.status(200).json(cars);
+    } catch (error) {
+      this.next(error);
+    }
+  }
+
+  public async update() {
+    try {
+      const { id } = this.req.params;
+
+      const obj = {
+        model: this.req.body.model,
+        year: this.req.body.year,
+        color: this.req.body.color,
+        status: this.req.body.status,
+        buyValue: this.req.body.buyValue,
+        doorsQty: this.req.body.doorsQty,
+        seatsQty: this.req.body.seatsQty,
+      };
+
+      const updating = await this.carsService.update(id, obj);
+
+      return this.res.status(200).json(updating);
     } catch (error) {
       this.next(error);
     }

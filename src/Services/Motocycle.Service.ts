@@ -30,4 +30,9 @@ export default class MotorcyclesService {
       return this.createBickDomain(IdMotorcycles);
     }
   }
+
+  public async update(id: string, obj: IMotorcycles) {
+    const updating = await this.motorcycleModelODM.update(id, obj);
+    return this.createBickDomain(updating as IMotorcycles);
+  }
 }

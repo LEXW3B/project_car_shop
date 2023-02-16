@@ -15,4 +15,6 @@ router.get('/', valid.listAllMotorcycles, (req, res, next) =>
 router.get('/:id', valid.tokenLength, valid.ifMotorcyclesExist, (req, res, next) =>
   new MotocycleController(req, res, next).findByIdMotorcycles());
 
+router.put('/:id', valid.tokenLength, valid.ifMotorcyclesExist, (req, res, next) =>
+  new MotocycleController(req, res, next).update());
 export default router;

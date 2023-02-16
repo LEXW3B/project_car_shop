@@ -18,4 +18,9 @@ export default class MotorcyclesService {
     const newbicks = await this.motorcycleModelODM.create(bick);
     return this.createBickDomain(newbicks);
   }
+
+  public async findAllMotorcycles(): Promise<(Motorcycle | null)[]> {
+    const cars = await this.motorcycleModelODM.findAllMotorcycles();
+    return cars.map((bick) => this.createBickDomain(bick));
+  }
 }

@@ -34,4 +34,8 @@ export default class MotorcycleModelODM extends AbstractODM<IMotorcycles> {
     const updating = await this.model.findByIdAndUpdate({ _id }, { ...obj }, { new: true });
     return updating;
   }
+
+  public async delete(id: string) {
+    await this.model.findByIdAndDelete(id);
+  }
 }

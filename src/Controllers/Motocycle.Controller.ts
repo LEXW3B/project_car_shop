@@ -6,6 +6,8 @@ export default class MotocycleController {
   private res: Response;
   private next: NextFunction;
   private motorcyclesService: MotorcyclesService;
+  private INVALID!: 'Invalid id';
+  private NOT_FOUND!: 'Car not found';
 
   constructor(req: Request, res: Response, next: NextFunction) {
     this.req = req;
@@ -40,7 +42,7 @@ export default class MotocycleController {
       const IdMotorcycles = await this.motorcyclesService.findByIdMotorcycles(id);
       return this.res.status(200).json(IdMotorcycles);
     } catch (error) {
-      return this.res.status(404).json({ message: 'Invalid id' });
+      return this.res.status(404).json({ message: this.INVALID });
     }
   }
 
@@ -62,7 +64,17 @@ export default class MotocycleController {
 
       return this.res.status(200).json(updating);
     } catch (error) {
-      return this.res.status(404).json({ message: 'Motorcycle not found' });
+      return this.res.status(404).json({ message: this.NOT_FOUND });
+    }
+  }
+
+  public async delete() {
+    try {
+      const { id } = this.req.params;
+      await this.motorcyclesService.delete(id);
+      return this.res.status(202);
+    } catch (error) {
+      return this.res.status(422).json({ message: this.INVALID });
     }
   }
 }

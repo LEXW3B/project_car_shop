@@ -17,4 +17,8 @@ router.get('/:id', valid.tokenLength, valid.ifMotorcyclesExist, (req, res, next)
 
 router.put('/:id', valid.tokenLength, valid.ifMotorcyclesExist, (req, res, next) =>
   new MotocycleController(req, res, next).update());
+
+router.delete('/:id', valid.tokenLength, valid.ifMotorcyclesExist, (req, res, next) =>
+  new MotocycleController(req, res, next).delete());
+
 export default router;

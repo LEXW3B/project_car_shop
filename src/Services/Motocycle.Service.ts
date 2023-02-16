@@ -1,6 +1,6 @@
+import MotorcycleModelODM from '../Models/Motorcycles.Model';
 import IMotorcycles from '../Interfaces/IMotorcycle';
 import Motorcycle from '../Domains/Motorcycle';
-import MotorcycleModelODM from '../Models/Motorcycles.Model';
 
 export default class MotorcyclesService {
   private motorcycleModelODM: MotorcycleModelODM;
@@ -34,5 +34,9 @@ export default class MotorcyclesService {
   public async update(id: string, obj: IMotorcycles) {
     const updating = await this.motorcycleModelODM.update(id, obj);
     return this.createBickDomain(updating as IMotorcycles);
+  }
+
+  public async delete(id: string) {
+    await this.motorcycleModelODM.delete(id);
   }
 }

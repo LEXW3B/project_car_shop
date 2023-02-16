@@ -16,7 +16,4 @@ router.get('/:id', valid.tokenLength, valid.ifCarExist, (req, res, next) =>
 router.put('/:id', valid.tokenLength, valid.ifCarExist, (req, res, next) =>
   new CarsController(req, res, next).update());
 
-router.post('/', (req, res, next) =>
-  new MotocycleController(req, res, next).create());
-
 export default router;

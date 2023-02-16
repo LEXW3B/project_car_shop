@@ -35,4 +35,8 @@ export default class CarsService {
     const updating = await this.carModelODM.update(id, obj);
     return this.createCarDomain(updating as ICar);
   }
+
+  public async delete(id: string) {
+    await this.carModelODM.delete(id);
+  }
 }

@@ -40,7 +40,6 @@ export default class MotocycleController {
       const IdMotorcycles = await this.motorcyclesService.findByIdMotorcycles(id);
       return this.res.status(200).json(IdMotorcycles);
     } catch (error) {
-      // this.next(error);
       return this.res.status(404).json({ message: 'Invalid id' });
     }
   }
@@ -63,7 +62,6 @@ export default class MotocycleController {
 
       return this.res.status(200).json(updating);
     } catch (error) {
-      // this.next(error);
       return this.res.status(404).json({ message: 'Motorcycle not found' });
     }
   }

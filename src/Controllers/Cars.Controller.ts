@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-// import { model } from 'mongoose';
 import CarsService from '../Services/Cars.Service';
 
 export default class CarsController {
@@ -7,6 +6,8 @@ export default class CarsController {
   private res: Response;
   private next: NextFunction;
   private carsService: CarsService;
+  private INVALID!: 'Invalid id';
+  private NOT_FOUND!: 'Car not found';
 
   constructor(req: Request, res: Response, next: NextFunction) {
     this.req = req;
@@ -40,8 +41,7 @@ export default class CarsController {
       const cars = await this.carsService.findById(id);
       return this.res.status(200).json(cars);
     } catch (error) {
-      // this.next(error);
-      return this.res.status(404).json({ message: 'Invalid id' });
+      return this.res.status(404).json({ message: this.INVALID });
     }
   }
 
@@ -63,8 +63,17 @@ export default class CarsController {
 
       return this.res.status(200).json(updating);
     } catch (error) {
-      // this.next(error);
-      return this.res.status(404).json({ message: 'Car not found' });
+      return this.res.status(404).json({ message: this.NOT_FOUND });
+    }
+  }
+
+  public async delete() {
+    try {
+      const { id } = this.req.params;
+      await this.carsService.delete(id);
+      return this.res.status(202);
+    } catch (error) {
+      return this.res.status(422).json({ message: this.INVALID });
     }
   }
 }

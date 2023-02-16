@@ -13,10 +13,14 @@ export default class MotorcycleModelODM extends AbstractODM<IMotorcycles> {
       category: { type: String, required: true },
       engineCapacity: { type: Number, required: true },
     });
-    super(schema, 'Motorcycles');
+    super(schema, 'Motorcycle');
   }
 
   public create(bick: IMotorcycles): Promise<IMotorcycles> {
     return this.model.create({ ...bick });
+  }
+
+  public async findAllMotorcycles(): Promise<IMotorcycles[]> {
+    return this.model.find();
   }
 }

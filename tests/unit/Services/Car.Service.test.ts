@@ -47,4 +47,40 @@ describe('Testes da camada service', function () {
     const result = expect(carService).to.exist;
     return result;
   });
+  
+  it('Se o id for iválido deve lançar o erro "Invalid id"', async function () {
+    sinon.stub(Model, 'findById').resolves(null);
+    try {
+      await carService.findById('Invalid id');
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Car not found');
+    }
+  });
+
+  it('Criar carro com sucesso', async function () {
+    const carEnters = {
+      model: 'Marea',
+      year: 2002,
+      color: 'Black',
+      status: true,
+      buyValue: 15.990,
+      doorsQty: 4,
+      seatsQty: 5,
+    };
+
+    const carLeaves = {
+      id: '63ec476bb37a66429c72706f',
+      model: 'Marea',
+      year: 2002,
+      color: 'Black',
+      status: true,
+      buyValue: 15.990,
+      doorsQty: 4,
+      seatsQty: 5,
+    };
+    sinon.stub(Model, 'create').resolves(carLeaves);
+
+    const createdCar = await carService.create(carEnters);
+    expect(createdCar).to.be.deep.equal(carLeaves);
+  });
 });

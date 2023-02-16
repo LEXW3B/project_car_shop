@@ -40,8 +40,31 @@ export default class MotocycleController {
       const IdMotorcycles = await this.motorcyclesService.findByIdMotorcycles(id);
       return this.res.status(200).json(IdMotorcycles);
     } catch (error) {
-      this.next(error);
-      // return this.res.status(404).json({ message: 'Invalid id' });
+      // this.next(error);
+      return this.res.status(404).json({ message: 'Invalid id' });
+    }
+  }
+
+  public async update() {
+    try {
+      const { id } = this.req.params;
+
+      const obj = {
+        model: this.req.body.model,
+        year: this.req.body.year,
+        color: this.req.body.color,
+        status: this.req.body.status,
+        buyValue: this.req.body.buyValue,
+        category: this.req.body.category,
+        engineCapacity: this.req.body.engineCapacity,
+      };
+
+      const updating = await this.motorcyclesService.update(id, obj);
+
+      return this.res.status(200).json(updating);
+    } catch (error) {
+      // this.next(error);
+      return this.res.status(404).json({ message: 'Motorcycle not found' });
     }
   }
 }

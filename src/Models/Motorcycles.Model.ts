@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, UpdateQuery, isValidObjectId } from 'mongoose';
 import IMotorcycles from '../Interfaces/IMotorcycle';
 import AbstractODM from './AbstractODM';
 
@@ -26,5 +26,12 @@ export default class MotorcycleModelODM extends AbstractODM<IMotorcycles> {
 
   public async findByIdMotorcycles(id: string): Promise<IMotorcycles | null> {
     return this.model.findById(id);
+  }
+
+  public async update(_id: string, obj: UpdateQuery<IMotorcycles>) {
+    if (!isValidObjectId(_id)) throw new Error('ID INVALID');
+
+    const updating = await this.model.findByIdAndUpdate({ _id }, { ...obj }, { new: true });
+    return updating;
   }
 }

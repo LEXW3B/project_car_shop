@@ -40,7 +40,8 @@ export default class CarsController {
       const cars = await this.carsService.findById(id);
       return this.res.status(200).json(cars);
     } catch (error) {
-      this.next(error);
+      // this.next(error);
+      return this.res.status(404).json({ message: 'Invalid id' });
     }
   }
 
@@ -62,7 +63,8 @@ export default class CarsController {
 
       return this.res.status(200).json(updating);
     } catch (error) {
-      this.next(error);
+      // this.next(error);
+      return this.res.status(404).json({ message: 'Car not found' });
     }
   }
 }

@@ -25,12 +25,23 @@ export default class MotocycleController {
     }
   }
 
-  public async findAllCars() {
+  public async findAllMotorcycles() {
     try {
       const motorcycles = await this.motorcyclesService.findAllMotorcycles();
       return this.res.status(200).json(motorcycles);
     } catch (error) {
       this.next(error);
+    }
+  }
+
+  public async findByIdMotorcycles() {
+    try {
+      const { id } = this.req.params;
+      const IdMotorcycles = await this.motorcyclesService.findByIdMotorcycles(id);
+      return this.res.status(200).json(IdMotorcycles);
+    } catch (error) {
+      this.next(error);
+      // return this.res.status(404).json({ message: 'Invalid id' });
     }
   }
 }

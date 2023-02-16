@@ -23,4 +23,11 @@ export default class MotorcyclesService {
     const cars = await this.motorcycleModelODM.findAllMotorcycles();
     return cars.map((bick) => this.createBickDomain(bick));
   }
+
+  public async findByIdMotorcycles(id: string) {  
+    if (id) {
+      const IdMotorcycles = await this.motorcycleModelODM.findByIdMotorcycles(id);
+      return this.createBickDomain(IdMotorcycles);
+    }
+  }
 }

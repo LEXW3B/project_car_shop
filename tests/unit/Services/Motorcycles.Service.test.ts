@@ -83,4 +83,13 @@ describe('Testes da camada service', function () {
     const createdBick = await motorcyclesService.create(bickEnters);
     expect(createdBick).to.be.deep.equal(bickLeaves);
   });
+
+  it('Tentar deletar uma moto que não existe vai aparecer a menssagem de erro', async function () {
+    sinon.stub(Model, 'findByIdAndDelete').resolves(null);
+    try {
+      await motorcyclesService.delete('Invalid id');
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Car not found');
+    }
+  });
 });

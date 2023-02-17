@@ -83,4 +83,13 @@ describe('Testes da camada service', function () {
     const createdCar = await carService.create(carEnters);
     expect(createdCar).to.be.deep.equal(carLeaves);
   });
+
+  it('Tentar deletar um carro que não existe vai aparecer a menssagem de erro', async function () {
+    sinon.stub(Model, 'findByIdAndDelete').resolves(null);
+    try {
+      await carService.delete('Invalid id');
+    } catch (error) {
+      expect((error as Error).message).to.be.equal('Car not found');
+    }
+  });
 });

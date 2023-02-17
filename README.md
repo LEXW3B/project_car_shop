@@ -39,5 +39,5 @@
 <p>Alexandre Evangelista</p>
 <a href="https://www.linkedin.com/in/alexandre-evangelista-souza-lima/" target="_blank">Linkedin</a>
 
-<p>alexmanson12345@gmail.com</p>
+    alexmanson12345@gmail.com
 

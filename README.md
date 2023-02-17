@@ -10,16 +10,11 @@
   Neste projeto, desenvolvi as seguintes habilidades
 <p/>
 
-  ° Exercitar o conhecimento dos pilares da Programação Orientada a Objetos `POO`: `Herança`, `Abstração`, `Encapsulamento` e `Polimorfismo`
-  
-  ° Exercitar a utilização de `Composição`
-  
-  ° Exercitar a criação e utilização de `Interfaces`
-  
-  ° Implementar, em `TypeScript`: `Classes`, `Instâncias`, `Atributos`, `Métodos` e `Objetos`
-  
-  ° Aplicar os conhecimentos de `MongoDB`, `Typescript` e `POO` para criar uma API com `CRUD`
-
+* Exercitar o conhecimento dos pilares da Programação Orientada a Objetos `POO`: `Herança`, `Abstração`, `Encapsulamento` e `Polimorfismo`  
+* Exercitar a utilização de `Composição`  
+* Exercitar a criação e utilização de `Interfaces`  
+* Implementar, em `TypeScript`: `Classes`, `Instâncias`, `Atributos`, `Métodos` e `Objetos`  
+* Aplicar os conhecimentos de `MongoDB`, `Typescript` e `POO` para criar uma API com `CRUD`
 <br>
 <h1>Instruções para rodar o projeto no seu computador</h1>
 <br>

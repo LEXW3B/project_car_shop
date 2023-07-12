@@ -20,13 +20,13 @@
 <br>
 <h3>Antes de começar a desenvolver</h3>
 <br>
+
 <h3>1° - Clone o repositório</h3>
 <ul>
   <li>git@github.com:LEXW3B/project_car_shop.git</li>
   <li>Entre na pasta do repositório que você acabou de clonar</li>
-  <ul>
-    <li>cd sd-023-project_car_shop</li>
-  </ul>
+  <li>cd sd-023-project_car_shop</li>
+</ul>
 
 <h3>2° - Instale as dependências</h3> 
 <ul>

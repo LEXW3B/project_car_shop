@@ -25,7 +25,7 @@
 <ul>
   <li>git@github.com:LEXW3B/project_car_shop.git</li>
   <li>Entre na pasta do repositório que você acabou de clonar</li>
-  <li>cd sd-023-project_car_shop</li>
+  <li>cd project_car_shop</li>
 </ul>
 
 <h3>2° - Instale as dependências</h3> 

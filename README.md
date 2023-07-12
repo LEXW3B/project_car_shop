@@ -32,6 +32,11 @@
 <ul>
   <li>npm install</li>
 </ul>
+</ul>
+<h3>3° - Use o docker-compose</h3> 
+<ul>
+  <li>docker-compose up -d</li>
+</ul>
 <hr>
 <h2>Contato</h2>
 <br>

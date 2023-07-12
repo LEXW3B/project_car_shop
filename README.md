@@ -27,15 +27,20 @@
   <ul>
     <li>cd sd-023-project_car_shop</li>
   </ul>
-</ul>
+
 <h3>2° - Instale as dependências</h3> 
 <ul>
   <li>npm install</li>
 </ul>
-</ul>
+
 <h3>3° - Use o docker-compose</h3> 
 <ul>
   <li>docker-compose up -d</li>
+</ul>
+
+<h3>4° - Use MongoDB</h3> 
+<ul>
+  <li>Extensão MongoDB</li>
 </ul>
 <hr>
 <h2>Contato</h2>

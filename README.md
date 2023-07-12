@@ -1,7 +1,7 @@
 <h1>Projeto Car Shop</h1>
 <br>
 <p>
-  Esse projeto foi desenvolvido no curso de Desenvolvimento de Software Web da Trybe, no modulo de back-end. O objetivo desse projeto foi aplicar os princípios de POO para a contrução de uma API com CRUD para gerenciar uma concessionária de veículos utilizando o banco de dados MongoDB.
+  Esse projeto foi desenvolvido no curso de Desenvolvimento de Software Web da Trybe, no modulo de back-end. O objetivo desse projeto foi aplicar os princípios de Programação Orientada a Objetos (POO) para a construção de uma API com CRUD para gerenciar uma concessionária de veículos. Isso será feito utilizando o banco de dados MongoDB através do framework do Mongoose.
 </p>
 <hr>
 <h1>Habilidades</h1>
@@ -16,6 +16,7 @@
 * Implementar, em `TypeScript`: `Classes`, `Instâncias`, `Atributos`, `Métodos` e `Objetos`  
 * Aplicar os conhecimentos de `MongoDB`, `Typescript` e `POO` para criar uma API com `CRUD`
 <br>
+
 <h1>Instruções para rodar o projeto no seu computador</h1>
 <br>
 <h3>Antes de começar a desenvolver</h3>
